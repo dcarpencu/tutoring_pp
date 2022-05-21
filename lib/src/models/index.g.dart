@@ -10,6 +10,10 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,
       email: json['email'] as String,
       username: json['username'] as String,
+      favouriteCourses: (json['favouriteCourses'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList() ??
+          const <int>[],
     );
 
 Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
@@ -17,6 +21,7 @@ Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
       'uid': instance.uid,
       'email': instance.email,
       'username': instance.username,
+      'favouriteCourses': instance.favouriteCourses,
     };
 
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(

@@ -11,6 +11,7 @@ part 'get_tutor.dart';
 part 'create_tutor.dart';
 part 'login_tutor.dart';
 part 'get_current_tutor.dart';
+part 'update_favorites.dart';
 
 abstract class AppAction {}
 

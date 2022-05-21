@@ -9,6 +9,8 @@ abstract class AuthApiBase {
 
   Future<void> logOut();
 
+  Future<void> updateFavorites(String uid, int id, {required bool add});
+
   Future<AppUser> getUser(String uid);
 
   Future<AppUser> createTutor({required String email, required String password, required String username});

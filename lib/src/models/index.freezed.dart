@@ -23,11 +23,15 @@ class _$AppUserTearOff {
   const _$AppUserTearOff();
 
   AppUser$ call(
-      {required String uid, required String email, required String username}) {
+      {required String uid,
+      required String email,
+      required String username,
+      List<int> favouriteCourses = const <int>[]}) {
     return AppUser$(
       uid: uid,
       email: email,
       username: username,
+      favouriteCourses: favouriteCourses,
     );
   }
 
@@ -44,6 +48,7 @@ mixin _$AppUser {
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
+  List<int> get favouriteCourses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +59,8 @@ mixin _$AppUser {
 abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
       _$AppUserCopyWithImpl<$Res>;
-  $Res call({String uid, String email, String username});
+  $Res call(
+      {String uid, String email, String username, List<int> favouriteCourses});
 }
 
 /// @nodoc
@@ -70,6 +76,7 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
     Object? uid = freezed,
     Object? email = freezed,
     Object? username = freezed,
+    Object? favouriteCourses = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
@@ -84,6 +91,10 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
+      favouriteCourses: favouriteCourses == freezed
+          ? _value.favouriteCourses
+          : favouriteCourses // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -93,7 +104,8 @@ abstract class $AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
   factory $AppUser$CopyWith(AppUser$ value, $Res Function(AppUser$) then) =
       _$AppUser$CopyWithImpl<$Res>;
   @override
-  $Res call({String uid, String email, String username});
+  $Res call(
+      {String uid, String email, String username, List<int> favouriteCourses});
 }
 
 /// @nodoc
@@ -110,6 +122,7 @@ class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? email = freezed,
     Object? username = freezed,
+    Object? favouriteCourses = freezed,
   }) {
     return _then(AppUser$(
       uid: uid == freezed
@@ -124,6 +137,10 @@ class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
+      favouriteCourses: favouriteCourses == freezed
+          ? _value.favouriteCourses
+          : favouriteCourses // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -132,7 +149,10 @@ class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppUser$ implements AppUser$ {
   const _$AppUser$(
-      {required this.uid, required this.email, required this.username});
+      {required this.uid,
+      required this.email,
+      required this.username,
+      this.favouriteCourses = const <int>[]});
 
   factory _$AppUser$.fromJson(Map<String, dynamic> json) =>
       _$$AppUser$FromJson(json);
@@ -143,10 +163,13 @@ class _$AppUser$ implements AppUser$ {
   final String email;
   @override
   final String username;
+  @JsonKey()
+  @override
+  final List<int> favouriteCourses;
 
   @override
   String toString() {
-    return 'AppUser(uid: $uid, email: $email, username: $username)';
+    return 'AppUser(uid: $uid, email: $email, username: $username, favouriteCourses: $favouriteCourses)';
   }
 
   @override
@@ -156,7 +179,9 @@ class _$AppUser$ implements AppUser$ {
             other is AppUser$ &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.username, username));
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality()
+                .equals(other.favouriteCourses, favouriteCourses));
   }
 
   @override
@@ -164,7 +189,8 @@ class _$AppUser$ implements AppUser$ {
       runtimeType,
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(username));
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(favouriteCourses));
 
   @JsonKey(ignore: true)
   @override
@@ -181,7 +207,8 @@ abstract class AppUser$ implements AppUser {
   const factory AppUser$(
       {required String uid,
       required String email,
-      required String username}) = _$AppUser$;
+      required String username,
+      List<int> favouriteCourses}) = _$AppUser$;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
@@ -191,6 +218,8 @@ abstract class AppUser$ implements AppUser {
   String get email;
   @override
   String get username;
+  @override
+  List<int> get favouriteCourses;
   @override
   @JsonKey(ignore: true)
   $AppUser$CopyWith<AppUser$> get copyWith =>

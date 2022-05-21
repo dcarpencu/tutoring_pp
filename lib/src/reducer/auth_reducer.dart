@@ -8,6 +8,8 @@ Reducer<AppState> authReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateUserSuccessful>(_createUserSuccessful),
   TypedReducer<AppState, LogoutSuccessful>(_logoutSuccessful),
   TypedReducer<AppState, GetUserSuccessful>(_getUserSuccessful),
+  TypedReducer<AppState, UpdateFavoriteStart>(_updateFavoriteStart),
+  TypedReducer<AppState, UpdateFavoriteError>(_updateFavoriteError),
 
   TypedReducer<AppState, LoginTutorSuccessful>(_loginTutorSuccessful),
   TypedReducer<AppState, GetCurrentTutorSuccessful>(_getCurrentTutorSuccessful),
@@ -59,4 +61,26 @@ AppState _getTutorSuccessful(AppState state, GetTutorSuccessful action) {
       action.user.uid: action.user,
     },
   );
+}
+
+AppState _updateFavoriteStart(AppState state, UpdateFavoriteStart action) {
+  final List<int> favouriteCourses = <int>[...state.user!.favouriteCourses];
+  if (action.add) {
+    favouriteCourses.add(action.id);
+  } else {
+    favouriteCourses.remove(action.id);
+  }
+  final AppUser user = state.user!.copyWith(favouriteCourses: favouriteCourses);
+  return state.copyWith(user: user);
+}
+
+AppState _updateFavoriteError(AppState state, UpdateFavoriteError action) {
+  final List<int> favouriteCourses = <int>[...state.user!.favouriteCourses];
+  if (action.add) {
+    favouriteCourses.remove(action.id);
+  } else {
+    favouriteCourses.add(action.id);
+  }
+  final AppUser user = state.user!.copyWith(favouriteCourses: favouriteCourses);
+  return state.copyWith(user: user);
 }
