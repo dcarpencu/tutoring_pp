@@ -1,5 +1,5 @@
-import 'package:movie_app/src/actions/index1.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/actions/index1.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 import 'package:redux/redux.dart';
 
 Reducer<AppState> authReducer = combineReducers<AppState>(<Reducer<AppState>>[

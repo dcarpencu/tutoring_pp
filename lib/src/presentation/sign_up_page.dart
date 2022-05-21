@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:movie_app/src/actions/index1.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/actions/index1.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);

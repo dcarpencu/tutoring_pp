@@ -1,4 +1,4 @@
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 abstract class AuthApiBase {
   Future<AppUser> create({required String email, required String password, required String username});

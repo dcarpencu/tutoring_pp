@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:movie_app/src/data/auth_base_api.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/data/auth_base_api.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 class AuthApi implements AuthApiBase {
   AuthApi(this._auth, this._firestore);

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 part 'index1.freezed.dart';
 part 'login.dart';

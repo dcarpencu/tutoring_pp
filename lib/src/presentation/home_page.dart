@@ -2,9 +2,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:movie_app/src/actions/index1.dart';
-import 'package:movie_app/src/containers/home_page_container.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/actions/index1.dart';
+import 'package:tutoring_pp/src/containers/home_page_container.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

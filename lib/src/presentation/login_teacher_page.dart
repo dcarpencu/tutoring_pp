@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:movie_app/src/actions/index1.dart';
-import 'package:movie_app/src/containers/pending_container.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/actions/index1.dart';
+import 'package:tutoring_pp/src/containers/pending_container.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 class LoginTeacherPage extends StatefulWidget {
   const LoginTeacherPage({Key? key}) : super(key: key);
