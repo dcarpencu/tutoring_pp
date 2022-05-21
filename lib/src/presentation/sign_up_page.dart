@@ -66,13 +66,13 @@ class _SignUpPageState extends State<SignUpPage> {
                         textInputAction: TextInputAction.next,
                         autofocus: true,
                         decoration: const InputDecoration(
-                          hintText: 'email@upt.student.ro',
+                          hintText: 'email@student.upt.ro',
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter a email.';
-                          } else if (!value.contains('@upt.student.ro')) {
-                            return 'Please enter a valid email@upt.student.ro address.';
+                          } else if (!value.contains('@student.upt.ro')) {
+                            return 'Please enter a valid email@student.upt.ro address.';
                           }
                           return null;
                         },

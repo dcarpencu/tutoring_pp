@@ -2,25 +2,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tutoring_pp/src/actions/index1.dart';
+import 'package:tutoring_pp/src/actions/add_course_dialog.dart';
 import 'package:tutoring_pp/src/containers/course_card.dart';
-import 'package:tutoring_pp/src/containers/course_card_user.dart';
 import 'package:tutoring_pp/src/containers/home_page_container.dart';
 import 'package:tutoring_pp/src/data/courses_database.dart';
 import 'package:tutoring_pp/src/models/app_course.dart';
 import 'package:tutoring_pp/src/models/index.dart';
+//import 'package:tutoring_app/course_card.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageAdmin extends StatefulWidget {
+  const HomePageAdmin({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageAdmin> createState() => _HomePageAdminState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageAdminState extends State<HomePageAdmin> {
   //final ScrollController _controller = ScrollController();
-  //final DataRepository repository = DataRepository();
   final CoursesDatabase repository = CoursesDatabase();
 
+  // 1
   Widget _buildList(BuildContext context, List<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
     return ListView(
       padding: const EdgeInsets.only(top: 20),
@@ -31,7 +32,16 @@ class _HomePageState extends State<HomePage> {
   Widget _buildListItem(BuildContext context, DocumentSnapshot<Map<String, dynamic>> snapshot) {
     final Course course = Course.fromSnapshot(snapshot);
 
-    return CourseCardUser(course: course);
+    return CourseCard(course: course);
+  }
+
+  void _addCourse() {
+    showDialog<Widget>(
+      context: context,
+      builder: (BuildContext context) {
+        return const AddCourseDialog();
+      },
+    );
   }
 
   @override
@@ -41,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.purpleAccent,
-            title: const Text('Available courses'),
+            title: const Text('Admin courses'),
             leading: IconButton(
               icon: const Icon(Icons.logout),
               onPressed: () {
@@ -57,6 +67,11 @@ class _HomePageState extends State<HomePage> {
               }
               return _buildList(context, snapshot.data?.docs ?? []);
             },),
+          floatingActionButton:
+          FloatingActionButton(
+            onPressed: _addCourse,
+            child: const Icon(Icons.add),
+          ),
         );
       },
     );
