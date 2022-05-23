@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/src/containers/user_container.dart';
-import 'package:movie_app/src/models/index.dart';
+import 'package:tutoring_pp/src/containers/user_container.dart';
+import 'package:tutoring_pp/src/models/index.dart';
 
 class SettingsUser extends StatefulWidget {
   const SettingsUser({Key? key}) : super(key: key);
