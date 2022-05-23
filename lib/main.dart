@@ -53,6 +53,7 @@ class TutoringApp extends StatelessWidget {
           '/login': (BuildContext context) => const LoginPage(),
           '/signUpTeacher': (BuildContext context) => const SignUpTeacherPage(),
           '/loginTeacher': (BuildContext context) => const LoginTeacherPage(),
+          '/userSettings': (BuildContext context) => const SettingsUser(),
         },
       ),
     );

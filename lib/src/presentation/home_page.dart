@@ -48,6 +48,20 @@ class _HomePageState extends State<HomePage> {
                 StoreProvider.of<AppState>(context).dispatch(const Logout());
               },
             ),
+            actions: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/userSettings');
+                  },
+                  child: const Icon(
+                    Icons.search,
+                    size: 26,
+                  ),
+                ),
+              ),
+            ],
           ),
           body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: repository.getStream(),
