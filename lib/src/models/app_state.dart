@@ -4,7 +4,6 @@ part of 'index.dart';
 class AppState with _$AppState {
   const factory AppState({
     AppUser? user,
-    //AppTeacher? teacher,
     @Default(<String>{}) Set<String> pending,
     @Default(<String, AppUser>{}) Map<String /*uid*/, AppUser> users,
   }) = AppState$;

@@ -52,9 +52,6 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
               else Padding(
                 padding: const EdgeInsets.all(8),
                 child: Text(description,
-                      style: TextStyle(
-                        color: Colors.grey[500],
-                      ),
                     ),
               ),
                 ],
