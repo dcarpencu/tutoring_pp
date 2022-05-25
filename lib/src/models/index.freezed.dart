@@ -57,10 +57,8 @@ mixin _$AppUser {
 
 /// @nodoc
 abstract class $AppUserCopyWith<$Res> {
-  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
-      _$AppUserCopyWithImpl<$Res>;
-  $Res call(
-      {String uid, String email, String username, List<int> favouriteCourses});
+  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res>;
+  $Res call({String uid, String email, String username, List<int> favouriteCourses});
 }
 
 /// @nodoc
@@ -101,18 +99,14 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
 
 /// @nodoc
 abstract class $AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
-  factory $AppUser$CopyWith(AppUser$ value, $Res Function(AppUser$) then) =
-      _$AppUser$CopyWithImpl<$Res>;
+  factory $AppUser$CopyWith(AppUser$ value, $Res Function(AppUser$) then) = _$AppUser$CopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String uid, String email, String username, List<int> favouriteCourses});
+  $Res call({String uid, String email, String username, List<int> favouriteCourses});
 }
 
 /// @nodoc
-class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
-    implements $AppUser$CopyWith<$Res> {
-  _$AppUser$CopyWithImpl(AppUser$ _value, $Res Function(AppUser$) _then)
-      : super(_value, (v) => _then(v as AppUser$));
+class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res> implements $AppUser$CopyWith<$Res> {
+  _$AppUser$CopyWithImpl(AppUser$ _value, $Res Function(AppUser$) _then) : super(_value, (v) => _then(v as AppUser$));
 
   @override
   AppUser$ get _value => super._value as AppUser$;
@@ -149,13 +143,9 @@ class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppUser$ implements AppUser$ {
   const _$AppUser$(
-      {required this.uid,
-      required this.email,
-      required this.username,
-      this.favouriteCourses = const <int>[]});
+      {required this.uid, required this.email, required this.username, this.favouriteCourses = const <int>[]});
 
-  factory _$AppUser$.fromJson(Map<String, dynamic> json) =>
-      _$$AppUser$FromJson(json);
+  factory _$AppUser$.fromJson(Map<String, dynamic> json) => _$$AppUser$FromJson(json);
 
   @override
   final String uid;
@@ -180,8 +170,7 @@ class _$AppUser$ implements AppUser$ {
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality()
-                .equals(other.favouriteCourses, favouriteCourses));
+            const DeepCollectionEquality().equals(other.favouriteCourses, favouriteCourses));
   }
 
   @override
@@ -194,8 +183,7 @@ class _$AppUser$ implements AppUser$ {
 
   @JsonKey(ignore: true)
   @override
-  $AppUser$CopyWith<AppUser$> get copyWith =>
-      _$AppUser$CopyWithImpl<AppUser$>(this, _$identity);
+  $AppUser$CopyWith<AppUser$> get copyWith => _$AppUser$CopyWithImpl<AppUser$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -205,10 +193,7 @@ class _$AppUser$ implements AppUser$ {
 
 abstract class AppUser$ implements AppUser {
   const factory AppUser$(
-      {required String uid,
-      required String email,
-      required String username,
-      List<int> favouriteCourses}) = _$AppUser$;
+      {required String uid, required String email, required String username, List<int> favouriteCourses}) = _$AppUser$;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
@@ -222,8 +207,7 @@ abstract class AppUser$ implements AppUser {
   List<int> get favouriteCourses;
   @override
   @JsonKey(ignore: true)
-  $AppUser$CopyWith<AppUser$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppUser$CopyWith<AppUser$> get copyWith => throw _privateConstructorUsedError;
 }
 
 AppState _$AppStateFromJson(Map<String, dynamic> json) {
@@ -235,9 +219,7 @@ class _$AppStateTearOff {
   const _$AppStateTearOff();
 
   AppState$ call(
-      {AppUser? user,
-      Set<String> pending = const <String>{},
-      Map<String, AppUser> users = const <String, AppUser>{}}) {
+      {AppUser? user, Set<String> pending = const <String>{}, Map<String, AppUser> users = const <String, AppUser>{}}) {
     return AppState$(
       user: user,
       pending: pending,
@@ -255,21 +237,18 @@ const $AppState = _$AppStateTearOff();
 
 /// @nodoc
 mixin _$AppState {
-  AppUser? get user =>
-      throw _privateConstructorUsedError; //AppTeacher? teacher,
+  AppUser? get user => throw _privateConstructorUsedError; //AppTeacher? teacher,
   Set<String> get pending => throw _privateConstructorUsedError;
   Map<String, AppUser> get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
   $Res call({AppUser? user, Set<String> pending, Map<String, AppUser> users});
 
   $AppUserCopyWith<$Res>? get user;
@@ -319,8 +298,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 
 /// @nodoc
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) =
-      _$AppState$CopyWithImpl<$Res>;
+  factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
   $Res call({AppUser? user, Set<String> pending, Map<String, AppUser> users});
 
@@ -329,8 +307,7 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
-    implements $AppState$CopyWith<$Res> {
+class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> implements $AppState$CopyWith<$Res> {
   _$AppState$CopyWithImpl(AppState$ _value, $Res Function(AppState$) _then)
       : super(_value, (v) => _then(v as AppState$));
 
@@ -363,13 +340,9 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
-  const _$AppState$(
-      {this.user,
-      this.pending = const <String>{},
-      this.users = const <String, AppUser>{}});
+  const _$AppState$({this.user, this.pending = const <String>{}, this.users = const <String, AppUser>{}});
 
-  factory _$AppState$.fromJson(Map<String, dynamic> json) =>
-      _$$AppState$FromJson(json);
+  factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
   @override
   final AppUser? user;
@@ -396,16 +369,12 @@ class _$AppState$ implements AppState$ {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(user),
-      const DeepCollectionEquality().hash(pending),
-      const DeepCollectionEquality().hash(users));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(pending), const DeepCollectionEquality().hash(users));
 
   @JsonKey(ignore: true)
   @override
-  $AppState$CopyWith<AppState$> get copyWith =>
-      _$AppState$CopyWithImpl<AppState$>(this, _$identity);
+  $AppState$CopyWith<AppState$> get copyWith => _$AppState$CopyWithImpl<AppState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -414,10 +383,7 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$(
-      {AppUser? user,
-      Set<String> pending,
-      Map<String, AppUser> users}) = _$AppState$;
+  const factory AppState$({AppUser? user, Set<String> pending, Map<String, AppUser> users}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -429,6 +395,5 @@ abstract class AppState$ implements AppState {
   Map<String, AppUser> get users;
   @override
   @JsonKey(ignore: true)
-  $AppState$CopyWith<AppState$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
 }

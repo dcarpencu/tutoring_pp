@@ -10,7 +10,6 @@ Reducer<AppState> authReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, GetUserSuccessful>(_getUserSuccessful),
   TypedReducer<AppState, UpdateFavoriteStart>(_updateFavoriteStart),
   TypedReducer<AppState, UpdateFavoriteError>(_updateFavoriteError),
-
   TypedReducer<AppState, LoginTutorSuccessful>(_loginTutorSuccessful),
   TypedReducer<AppState, GetCurrentTutorSuccessful>(_getCurrentTutorSuccessful),
   TypedReducer<AppState, CreateTutorSuccessful>(_createTutorSuccessful),

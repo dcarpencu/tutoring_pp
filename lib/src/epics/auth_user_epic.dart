@@ -18,7 +18,6 @@ class AuthEpic {
       TypedEpic<AppState, LogoutStart>(_logoutStart),
       TypedEpic<AppState, GetUserStart>(_getUserStart),
       TypedEpic<AppState, UpdateFavoriteStart>(_updateFavoriteStart),
-
       TypedEpic<AppState, LoginTutorStart>(_loginTutorStart),
       TypedEpic<AppState, GetCurrentTutorStart>(_getCurrentTutorStart),
       TypedEpic<AppState, CreateTutorStart>(_createTutorStart),

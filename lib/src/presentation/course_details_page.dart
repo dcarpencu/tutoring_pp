@@ -153,9 +153,10 @@ class _CourseDetailState extends State<CourseDetail> {
 
   void addAvailable(Course course, Function callback) {
     showDialog<Widget>(
-        context: context,
-        builder: (BuildContext context) {
-          return AddAvailable(course: course, callback: callback);
-        },);
+      context: context,
+      builder: (BuildContext context) {
+        return AddAvailable(course: course, callback: callback);
+      },
+    );
   }
 }

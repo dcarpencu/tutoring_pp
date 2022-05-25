@@ -67,10 +67,9 @@ class AuthApi implements AuthApiBase {
     await _auth.signInWithEmailAndPassword(email: email, password: password);
 
     final DocumentSnapshot<Map<String, dynamic>> snapshot =
-    await _firestore.doc('tutors/${_auth.currentUser!.uid}').get();
+        await _firestore.doc('tutors/${_auth.currentUser!.uid}').get();
     return AppUser.fromJson(snapshot.data()!);
   }
-
 
   @override
   Future<AppUser> create({required String email, required String password, required String username}) async {

@@ -7,7 +7,7 @@ class CreateTutor with _$CreateTutor implements AppAction {
     required String password,
     required String username,
     required ActionResult onResult,
-}) = CreateTutorStart;
+  }) = CreateTutorStart;
 
   const factory CreateTutor.successful(AppUser user) = CreateTutorSuccessful;
 

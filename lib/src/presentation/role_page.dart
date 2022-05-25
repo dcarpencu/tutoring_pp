@@ -11,14 +11,13 @@ class RolePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
               child: const Text('Student'),
             ),
-
             TextButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/loginTeacher');
               },
               child: const Text('Admin'),
