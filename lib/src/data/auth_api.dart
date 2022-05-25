@@ -35,7 +35,7 @@ class AuthApi implements AuthApiBase {
   Future<AppUser?> getCurrentTutor() async {
     final User? currentTutor = _auth.currentUser;
     if (currentTutor != null) {
-      final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore.doc('tutors/${currentTutor.uid}').get();
+      final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore.doc('users/${currentTutor.uid}').get();
 
       if (snapshot.exists) {
         return AppUser.fromJson(snapshot.data()!);
@@ -45,7 +45,7 @@ class AuthApi implements AuthApiBase {
           email: currentTutor.email!,
           username: currentTutor.displayName!,
         );
-        await _firestore.doc('tutors/${tutor.uid}').set(tutor.toJson());
+        await _firestore.doc('users/${tutor.uid}').set(tutor.toJson());
 
         return tutor;
       }
@@ -67,7 +67,7 @@ class AuthApi implements AuthApiBase {
     await _auth.signInWithEmailAndPassword(email: email, password: password);
 
     final DocumentSnapshot<Map<String, dynamic>> snapshot =
-        await _firestore.doc('tutors/${_auth.currentUser!.uid}').get();
+        await _firestore.doc('users/${_auth.currentUser!.uid}').get();
     return AppUser.fromJson(snapshot.data()!);
   }
 
@@ -97,7 +97,7 @@ class AuthApi implements AuthApiBase {
       email: email,
       username: username,
     );
-    await _firestore.doc('tutors/${tutor.uid}').set(tutor.toJson());
+    await _firestore.doc('users/${tutor.uid}').set(tutor.toJson());
 
     return tutor;
   }

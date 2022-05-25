@@ -12,14 +12,14 @@ class AvailableList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const SizedBox(height: 6),
-        const Text(
-          'Course sessions',
-          style: TextStyle(fontSize: 16),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Course sessions',
+            style: TextStyle(fontSize: 16),
+          ),
         ),
-        ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 200),
-          child: ListView.builder(
+    ListView.builder(
             shrinkWrap: true,
             padding: const EdgeInsets.all(16),
             itemCount: course.availables.length,
@@ -27,7 +27,6 @@ class AvailableList extends StatelessWidget {
               return buildRow(course.availables[index]);
             },
           ),
-        ),
       ],
     );
   }

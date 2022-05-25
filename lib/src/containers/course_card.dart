@@ -26,10 +26,6 @@ class CourseCard extends StatelessWidget {
                   children: <Widget>[
                     Text(course.name),
                     Text(course.type),
-                    Text(course.type),
-                    Text(course.type),
-                    Text(course.type),
-                    Text(course.type),
                   ],
                 ),
               ),

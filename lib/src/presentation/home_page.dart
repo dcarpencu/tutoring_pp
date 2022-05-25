@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pushNamed(context, '/userSettings');
                   },
                   child: const Icon(
-                    Icons.search,
+                    Icons.settings,
                     size: 26,
                   ),
                 ),

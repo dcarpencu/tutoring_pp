@@ -37,31 +37,17 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  AvailableList(course: widget.course, buildRow: buildRow),
-                  const Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Text(
-                      'Course description:',
-                      style: TextStyle(
-                        fontSize: 16,
+                  Card(
+                  child: ListTile(
+                  leading: const FlutterLogo(size: 56,),
+                  title: const Text(
+                      'Course description:',),
+                  subtitle: Text(
+                        description!,
                       ),
                     ),
                   ),
-                  if (description == null)
-                    const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Text(
-                        'No description',
-                        style: TextStyle(color: Colors.blueGrey),
-                      ),
-                    )
-                  else
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Text(
-                        description,
-                      ),
-                    ),
+                  Expanded(child: AvailableList(course: widget.course, buildRow: buildRow)),
                 ],
               ),
             ),
@@ -72,21 +58,31 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
   }
 
   Widget buildRow(Available available) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: Text(available.tutor),
-        ),
-        Text(dateFormat.format(available.date)),
-        Checkbox(
-          value: available.done ?? false,
-          onChanged: (bool? newValue) {
-            setState(() {
-              available.done = newValue;
-            });
-          },
-        )
-      ],
+    return Expanded(
+      child: Column(
+        children: <Widget>[
+          Card(
+            child: ListTile(
+                leading: const Icon(Icons.account_box),
+                title: Text(available.tutor),
+                subtitle: Text(dateFormat.format(available.date)),
+                trailing: Checkbox(
+                  value: available.done ?? false,
+                  onChanged: (bool? newValue) {
+                    setState(() {
+                      available.done = newValue;
+                    });
+                  },
+                )
+
+                  ),
+                ),
+              ],
+            ),
     );
   }
 }
+// value: available.done ?? false,
+// onChanged: (bool? newValue) {
+// setState(() {
+// available.done = newValue;
