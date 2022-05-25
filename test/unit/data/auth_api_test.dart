@@ -38,7 +38,7 @@ Future<void> main() async {
   });
 
   test('logOut', () async {
-    when(auth.signOut).thenAnswer(() async {});
+    when(auth.signOut).thenAnswer((_) async {});
 
     await api.logOut();
 

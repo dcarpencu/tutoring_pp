@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tutoring_pp/src/actions/index1.dart';
 import 'package:tutoring_pp/src/containers/pending_container.dart';
@@ -40,7 +41,9 @@ class _LoginTeacherPageState extends State<LoginTeacherPage> {
       if (kDebugMode) {
         print(action.error);
       }
-    }
+    } else if (action is LoginTutorSuccessful) {
+  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+  }
   }
 
   @override
@@ -103,9 +106,10 @@ class _LoginTeacherPageState extends State<LoginTeacherPage> {
                         },
                       ),
                       const SizedBox(height: 16),
-                      TextButton(
+                      ButttonWithIcon(
+                        title: 'Login',
+                        icon: Icons.privacy_tip_rounded,
                         onPressed: () => _onNext(context),
-                        child: const Text('Login'),
                       ),
                       TextButton(
                         onPressed: () {
@@ -118,7 +122,6 @@ class _LoginTeacherPageState extends State<LoginTeacherPage> {
                           ),
                         ),
                       ),
-                      const Text('teacher'),
                     ],
                   ),
                 ),
