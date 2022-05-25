@@ -1,0 +1,9 @@
+{
+  "user": {
+    "uid": "uid",
+    "email": "email",
+    "username": "username"
+  },
+  "pending": [],
+  "users": {}
+}
