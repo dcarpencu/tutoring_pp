@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tutoring_pp/src/containers/course_room.dart';
 import 'package:tutoring_pp/src/containers/course_room_user.dart';
 import 'package:tutoring_pp/src/models/app_course.dart';
-import 'package:tutoring_pp/src/models/available.dart';
 
 class CourseCardUser extends StatelessWidget {
-  CourseCardUser({Key? key, required this.course})
-      : super(key: key);
+  CourseCardUser({Key? key, required this.course}) : super(key: key);
 
   final Course course;
   final Map<String, Color?> splashColor = <String, Color?>{
@@ -19,25 +16,44 @@ class CourseCardUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 8,
-      child: InkWell(
-        splashColor: splashColor[course.type],
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding:
-                const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                child: Text(course.name),
-              ),
-            ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.star))
-          ],
-        ),
-        onTap: () => Navigator.push<Widget>(
-          context,
-          MaterialPageRoute(
-            builder: (BuildContext context) => CourseRoomUser(course: course),
+      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+      child: Container(
+        decoration: const BoxDecoration(color: Colors.pinkAccent),
+        child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          leading: Container(
+            padding: const EdgeInsets.only(right: 12.0),
+            decoration: const BoxDecoration(border: Border(right: BorderSide(width: 1.0, color: Colors.white24))),
+            child: const Icon(Icons.autorenew, color: Colors.white),
           ),
+          title: Text(
+            course.name,
+            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          subtitle: Row(
+            children: <Widget>[
+              const Icon(
+                Icons.linear_scale,
+                color: Colors.yellowAccent,
+              ),
+              Text(
+                course.type,
+                style: const TextStyle(color: Colors.white),
+              )
+            ],
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0),
+            onPressed: () {
+              Navigator.push<Widget>(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => CourseRoomUser(course: course),
+                ),
+              );
+            },
+          ),
+          // onTap: () =>
         ),
       ),
     );

@@ -23,7 +23,8 @@ class _SettingsUserState extends State<SettingsUser> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
-          },),
+          },
+        ),
       ),
       body: UserContainer(
         builder: (BuildContext context, AppUser? user) {
@@ -38,8 +39,10 @@ class _SettingsUserState extends State<SettingsUser> {
                   ),
                   child: AnimatedTextKit(
                     animatedTexts: [
-                      WavyAnimatedText('Welcome ${user?.username}! You are finally here!', textStyle: const TextStyle(color: Colors.black)),
-                      WavyAnimatedText('You can update your account here!', textStyle: const TextStyle(color: Colors.black)),
+                      WavyAnimatedText('Welcome ${user?.username}! You are finally here!',
+                          textStyle: const TextStyle(color: Colors.black)),
+                      WavyAnimatedText('You can update your account here!',
+                          textStyle: const TextStyle(color: Colors.black)),
                     ],
                     isRepeatingAnimation: true,
                     onTap: () {

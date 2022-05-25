@@ -3,8 +3,7 @@ import 'package:tutoring_pp/src/models/app_course.dart';
 import 'package:tutoring_pp/src/models/available.dart';
 
 class AvailableList extends StatelessWidget {
-  const AvailableList({Key? key, required this.course, required this.buildRow})
-      : super(key: key);
+  const AvailableList({Key? key, required this.course, required this.buildRow}) : super(key: key);
 
   final Course course;
   final Widget Function(Available) buildRow;

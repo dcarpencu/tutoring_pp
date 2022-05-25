@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class DatePicker extends StatefulWidget {
-  const DatePicker(
-      {Key? key,
-      required this.name,
-      required this.onChanged,
-      required this.validator})
-      : super(key: key);
+  const DatePicker({Key? key, required this.name, required this.onChanged, required this.validator}) : super(key: key);
 
   final String name;
   final Function(DateTime) onChanged;

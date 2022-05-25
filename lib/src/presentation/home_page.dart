@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
       children: snapshot.map((DocumentSnapshot<Map<String, dynamic>> data) => _buildListItem(context, data)).toList(),
     );
   }
+
 // 3
   Widget _buildListItem(BuildContext context, DocumentSnapshot<Map<String, dynamic>> snapshot) {
     final Course course = Course.fromSnapshot(snapshot);
@@ -70,7 +71,8 @@ class _HomePageState extends State<HomePage> {
                 return const LinearProgressIndicator();
               }
               return _buildList(context, snapshot.data?.docs ?? []);
-            },),
+            },
+          ),
         );
       },
     );

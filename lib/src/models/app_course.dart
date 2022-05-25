@@ -3,13 +3,12 @@ import 'package:tutoring_pp/src/models/available.dart';
 
 class Course {
   Course(
-      this.name,
-      {
-        this.notes,
-        required this.type,
-        this.referenceId,
-        required this.availables,
-      });
+    this.name, {
+    this.notes,
+    required this.type,
+    this.referenceId,
+    required this.availables,
+  });
   factory Course.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) {
     final Course newCourse = Course.fromJson(snapshot.data()!);
     // ignore: cascade_invocations
@@ -29,11 +28,12 @@ class Course {
 }
 
 Course _courseFromJson(Map<String, dynamic> json) {
-  return Course(json['name'] as String,
-      notes: json['notes'] as String?,
-      type: json['type'] as String,
-      availables:
-      _convertAvailables(json['availables'] as List<dynamic>),);
+  return Course(
+    json['name'] as String,
+    notes: json['notes'] as String?,
+    type: json['type'] as String,
+    availables: _convertAvailables(json['availables'] as List<dynamic>),
+  );
 }
 
 List<Available> _convertAvailables(List<dynamic> availableMap) {
@@ -44,13 +44,14 @@ List<Available> _convertAvailables(List<dynamic> availableMap) {
   }
   return availables;
 }
+
 // 3
 Map<String, dynamic> _courseToJson(Course instance) => <String, dynamic>{
-  'name': instance.name,
-  'notes': instance.notes,
-  'type': instance.type,
-  'availables': _availableList(instance.availables),
-};
+      'name': instance.name,
+      'notes': instance.notes,
+      'type': instance.type,
+      'availables': _availableList(instance.availables),
+    };
 // 4
 List<Map<String, dynamic>>? _availableList(List<Available>? availables) {
   if (availables == null) {
@@ -62,12 +63,6 @@ List<Map<String, dynamic>>? _availableList(List<Available>? availables) {
   }
   return availableMap;
 }
-
-
-
-
-
-
 
 /*
 class AppCourse {

@@ -2,13 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Available {
   Available(
-      this.tutor,
-      {
-        required this.date,
-        this.done,
-      });
-  factory Available.fromJson(Map<String, dynamic> json) =>
-      _availableFromJson(json);
+    this.tutor, {
+    required this.date,
+    this.done,
+  });
+  factory Available.fromJson(Map<String, dynamic> json) => _availableFromJson(json);
 
   final String tutor;
   final DateTime date;
@@ -26,9 +24,9 @@ Available _availableFromJson(Map<String, dynamic> json) {
     done: json['done'] as bool,
   );
 }
+
 // 2
-Map<String, dynamic> _availableToJson(Available instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _availableToJson(Available instance) => <String, dynamic>{
       'tutor': instance.tutor,
       'date': instance.date,
       'done': instance.done,

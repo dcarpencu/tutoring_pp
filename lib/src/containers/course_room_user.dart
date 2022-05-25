@@ -26,34 +26,42 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
-          },),
+          },
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(8),
         child: Row(
           children: <Widget>[
             Expanded(
-              /*1*/
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  /*2*/
                   AvailableList(course: widget.course, buildRow: buildRow),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text('Course description:', style: TextStyle(fontSize: 16, ),),
-              ),
-                  if (description == null)
-                const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text('No description', style: TextStyle(color: Colors.blueGrey),
-                  ),
-                )
-              else Padding(
-                padding: const EdgeInsets.all(8),
-                child: Text(description,
+                  const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      'Course description:',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-              ),
+                  ),
+                  if (description == null)
+                    const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Text(
+                        'No description',
+                        style: TextStyle(color: Colors.blueGrey),
+                      ),
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Text(
+                        description,
+                      ),
+                    ),
                 ],
               ),
             ),

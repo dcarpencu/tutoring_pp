@@ -6,8 +6,7 @@ import 'package:tutoring_pp/src/widgets/text_field.dart';
 import 'package:tutoring_pp/src/widgets/available_check_box.dart';
 
 class AddAvailable extends StatefulWidget {
-  const AddAvailable({Key? key, required this.course, required this.callback})
-      : super(key: key);
+  const AddAvailable({Key? key, required this.course, required this.callback}) : super(key: key);
 
   final Course course;
   final Function callback;
@@ -83,16 +82,16 @@ class _AddAvailableState extends State<AddAvailable> {
             child: const Text('Cancel'),
           ),
           TextButton(
-              onPressed: () {
-                if (_formKey.currentState?.validate() ?? false) {
-                  Navigator.of(context).pop();
-                  final Available newAvailable = Available(available,
-                      date: availableDate, done: done);
-                  course.availables.add(newAvailable);
-                }
-                widget.callback();
-              },
-              child: const Text('Add'),),
+            onPressed: () {
+              if (_formKey.currentState?.validate() ?? false) {
+                Navigator.of(context).pop();
+                final Available newAvailable = Available(available, date: availableDate, done: done);
+                course.availables.add(newAvailable);
+              }
+              widget.callback();
+            },
+            child: const Text('Add'),
+          ),
         ]);
   }
 }
