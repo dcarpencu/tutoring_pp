@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your @student.upt.ro email';
-                          } else if (!value.contains('@')) {
+                          } else if (!value.contains('@student.upt.ro')) {
                             return 'Please enter a valid email@student.upt.ro address';
                           }
                           return null;
