@@ -32,9 +32,9 @@ class _CourseDetailState extends State<CourseDetail> {
     type = widget.course.type;
     name = widget.course.name;
     courseTypes = [
-      CategoryOption(type: 'theoretical', name: 'Theoretical', isSelected: type == 'cat'),
-      CategoryOption(type: 'hands-on', name: 'Hands-on', isSelected: type == 'dog'),
-      CategoryOption(type: 'other', name: 'Other', isSelected: type == 'other'),
+      CategoryOption(type: 'beginner', name: 'Beginner', isSelected: type == 'beginner'),
+      CategoryOption(type: 'intermediate', name: 'Intermediate', isSelected: type == 'intermediate'),
+      CategoryOption(type: 'expert', name: 'Expert', isSelected: type == 'expert'),
     ];
     super.initState();
   }
@@ -63,7 +63,7 @@ class _CourseDetailState extends State<CourseDetail> {
                 onChanged: (String? value) => name = value ?? name,
               ),
               ChooseType(
-                title: 'Course Type',
+                title: 'Course Difficulty',
                 options: courseTypes,
                 onOptionTap: (CategoryOption value) {
                   setState(() {

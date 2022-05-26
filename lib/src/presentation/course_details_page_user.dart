@@ -32,9 +32,9 @@ class _CourseDetailUserState extends State<CourseDetailUser> {
     type = widget.course.type;
     name = widget.course.name;
     courseTypes = [
-      CategoryOption(type: 'theoretical', name: 'Theoretical', isSelected: type == 'theoretical'),
-      CategoryOption(type: 'hands-on', name: 'Hands-on', isSelected: type == 'hands-on'),
-      CategoryOption(type: 'other', name: 'Other', isSelected: type == 'other'),
+      CategoryOption(type: 'beginner', name: 'Beginner', isSelected: type == 'beginner'),
+      CategoryOption(type: 'intermediate', name: 'Intermediate', isSelected: type == 'intermediate'),
+      CategoryOption(type: 'expert', name: 'Expert', isSelected: type == 'expert'),
     ];
     super.initState();
   }

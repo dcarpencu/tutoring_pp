@@ -42,11 +42,8 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
                   leading: const FlutterLogo(size: 56,),
                   title: const Text(
                       'Course description:',),
-                  subtitle: Text(
-                        description!,
-                      ),
+                  subtitle: (description == null)? const Text('No description.') : Text(description),),
                     ),
-                  ),
                   Expanded(child: AvailableList(course: widget.course, buildRow: buildRow)),
                 ],
               ),

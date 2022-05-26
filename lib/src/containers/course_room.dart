@@ -9,18 +9,16 @@ class CourseRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(course.name),
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-        ),
-        body: CourseDetail(course: course),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(course.name),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
       ),
+      body: CourseDetail(course: course),
     );
   }
 }
