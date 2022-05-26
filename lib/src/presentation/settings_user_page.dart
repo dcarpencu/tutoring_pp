@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +30,6 @@ class _SettingsUserState extends State<SettingsUser> {
         builder: (BuildContext context, AppUser? user) {
           return Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(20),
@@ -42,13 +39,12 @@ class _SettingsUserState extends State<SettingsUser> {
                       fontSize: 16,
                     ),
                     child: AnimatedTextKit(
-                      animatedTexts: [
+                      animatedTexts: <WavyAnimatedText>[
                         WavyAnimatedText('Welcome ${user?.username}! You are finally here!',
-                            textStyle: const TextStyle(color: Colors.black)),
+                            textStyle: const TextStyle(color: Colors.black),),
                         WavyAnimatedText('You can update your account here!',
-                            textStyle: const TextStyle(color: Colors.black)),
+                            textStyle: const TextStyle(color: Colors.black),),
                       ],
-                      isRepeatingAnimation: true,
                       onTap: () {
                         if (kDebugMode) {
                           print('Tap Event');
@@ -71,7 +67,7 @@ class _SettingsUserState extends State<SettingsUser> {
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Text(
             title,
             style: const TextStyle(
@@ -90,30 +86,29 @@ class _SettingsUserState extends State<SettingsUser> {
                   border: Border(
                       bottom: BorderSide(
                 color: Colors.grey,
-                width: 1,
-              ))),
-              child: Row(children: [
+              ),),),
+              child: Row(children: <Widget>[
                 Expanded(
                     child: TextButton(
                         onPressed: () {},
                         child: Text(
                           getValue,
                           style: const TextStyle(fontSize: 16, height: 1.4),
-                        ))),
+                        ),),),
                 const Icon(
                   Icons.keyboard_arrow_right,
                   color: Colors.grey,
-                  size: 40.0,
+                  size: 40,
                 )
-              ]))
+              ],),)
         ],
-      ));
+      ),);
 
   Widget buildAbout(AppUser user) => Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           const Text(
             'Tell Us About Yourself',
             style: TextStyle(
@@ -130,9 +125,8 @@ class _SettingsUserState extends State<SettingsUser> {
                   border: Border(
                       bottom: BorderSide(
                 color: Colors.grey,
-                width: 1,
-              ))),
-              child: Row(children: [
+              ),),),
+              child: Row(children: <Widget>[
                 Expanded(
                     child: TextButton(
                         onPressed: () {},
@@ -146,22 +140,14 @@ class _SettingsUserState extends State<SettingsUser> {
                                     fontSize: 16,
                                     height: 1.4,
                                   ),
-                                ))))),
+                                ),),),),),
                 const Icon(
                   Icons.keyboard_arrow_right,
                   color: Colors.grey,
-                  size: 40.0,
+                  size: 40,
                 )
-              ]))
+              ],),)
         ],
-      ));
+      ),);
 
-  FutureOr onGoBack(dynamic value) {
-    setState(() {});
-  }
-
-  void navigateSecondPage(Widget editForm) {
-    Route route = MaterialPageRoute(builder: (context) => editForm);
-    Navigator.push(context, route).then(onGoBack);
-  }
 }

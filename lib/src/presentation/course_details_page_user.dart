@@ -81,7 +81,7 @@ class _CourseDetailUserState extends State<CourseDetailUser> {
                       child: const Text(
                         'Delete',
                         style: TextStyle(color: Colors.white, fontSize: 12),
-                      )),
+                      ),),
                   MaterialButton(
                     color: Colors.blue.shade600,
                     onPressed: () async {

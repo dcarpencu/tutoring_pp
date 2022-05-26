@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tutoring_pp/src/models/app_course.dart';
 import 'package:tutoring_pp/src/models/available.dart';
+import 'package:tutoring_pp/src/widgets/available_check_box.dart';
 import 'package:tutoring_pp/src/widgets/date_picker.dart';
 import 'package:tutoring_pp/src/widgets/text_field.dart';
-import 'package:tutoring_pp/src/widgets/available_check_box.dart';
 
 class AddAvailable extends StatefulWidget {
   const AddAvailable({Key? key, required this.course, required this.callback}) : super(key: key);
