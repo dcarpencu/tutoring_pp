@@ -13,8 +13,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return UserContainer(
       builder: (BuildContext context, AppUser? user) {
-        if (user != null ) {
-          if(user.email.contains('@upt.ro')) {
+        if (user != null) {
+          if (user.email.contains('@upt.ro')) {
             return const HomePageAdmin();
           } else {
             return const HomePage();

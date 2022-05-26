@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class SettingsUser extends StatefulWidget {
 }
 
 class _SettingsUserState extends State<SettingsUser> {
-  final TextEditingController _username = TextEditingController();
+  //final TextEditingController _username = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,61 +30,138 @@ class _SettingsUserState extends State<SettingsUser> {
       ),
       body: UserContainer(
         builder: (BuildContext context, AppUser? user) {
-          return Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: DefaultTextStyle(
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 20,
-                  ),
-                  child: AnimatedTextKit(
-                    animatedTexts: [
-                      WavyAnimatedText('Welcome ${user?.username}! You are finally here!',
-                          textStyle: const TextStyle(color: Colors.black)),
-                      WavyAnimatedText('You can update your account here!',
-                          textStyle: const TextStyle(color: Colors.black)),
-                    ],
-                    isRepeatingAnimation: true,
-                    onTap: () {
-                      if (kDebugMode) {
-                        print('Tap Event');
-                      }
-                    },
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: DefaultTextStyle(
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        WavyAnimatedText('Welcome ${user?.username}! You are finally here!',
+                            textStyle: const TextStyle(color: Colors.black)),
+                        WavyAnimatedText('You can update your account here!',
+                            textStyle: const TextStyle(color: Colors.black)),
+                      ],
+                      isRepeatingAnimation: true,
+                      onTap: () {
+                        if (kDebugMode) {
+                          print('Tap Event');
+                        }
+                      },
+                    ),
                   ),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text('Here you can edit your username:'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: TextFormField(
-                  controller: _username,
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.done,
-                  decoration: const InputDecoration(
-                    hintText: 'new username',
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your new username';
-                    } else if (value.length < 3) {
-                      return 'Please enter an username longer than 3 characters.';
-                    }
-                    return null;
-                  },
-                  onFieldSubmitted: (String value) {
-                    //_onNext(context);
-                  },
-                ),
-              ),
-            ],
+                buildUserInfoDisplay(user!.username, 'Username'),
+                buildUserInfoDisplay(user.email, 'email'),
+              ],
+            ),
           );
         },
       ),
     );
+  }
+
+  Widget buildUserInfoDisplay(String getValue, String title) => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(
+            height: 1,
+          ),
+          Container(
+              width: 350,
+              height: 40,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          getValue,
+                          style: const TextStyle(fontSize: 16, height: 1.4),
+                        ))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
+
+  Widget buildAbout(AppUser user) => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Tell Us About Yourself',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 1),
+          Container(
+              width: 350,
+              height: 200,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(
+                color: Colors.grey,
+                width: 1,
+              ))),
+              child: Row(children: [
+                Expanded(
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  user.email,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                  ),
+                                ))))),
+                const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.grey,
+                  size: 40.0,
+                )
+              ]))
+        ],
+      ));
+
+  FutureOr onGoBack(dynamic value) {
+    setState(() {});
+  }
+
+  void navigateSecondPage(Widget editForm) {
+    Route route = MaterialPageRoute(builder: (context) => editForm);
+    Navigator.push(context, route).then(onGoBack);
   }
 }

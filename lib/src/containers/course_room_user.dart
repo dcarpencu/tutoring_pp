@@ -38,12 +38,16 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Card(
-                  child: ListTile(
-                  leading: const FlutterLogo(size: 56,),
-                  title: const Text(
-                      'Course description:',),
-                  subtitle: (description == null)? const Text('No description.') : Text(description),),
+                    child: ListTile(
+                      leading: const FlutterLogo(
+                        size: 56,
+                      ),
+                      title: const Text(
+                        'Course description:',
+                      ),
+                      subtitle: (description == null) ? const Text('No description.') : Text(description),
                     ),
+                  ),
                   Expanded(child: AvailableList(course: widget.course, buildRow: buildRow)),
                 ],
               ),
@@ -70,12 +74,10 @@ class _CourseRoomUserState extends State<CourseRoomUser> {
                       available.done = newValue;
                     });
                   },
-                )
-
-                  ),
-                ),
-              ],
-            ),
+                )),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -46,6 +46,7 @@ class _AddAvailableState extends State<AddAvailable> {
                     if (value == null || value.isEmpty) {
                       return "Enter the Tutor's Name";
                     }
+                    return null;
                   },
                   inputType: TextInputType.text,
                   onChanged: (String? value) {
@@ -60,6 +61,7 @@ class _AddAvailableState extends State<AddAvailable> {
                       if (value == null || value.isEmpty) {
                         return 'Enter the Availability Date';
                       }
+                      return null;
                     },
                     onChanged: (DateTime text) {
                       availableDate = text;

@@ -42,8 +42,8 @@ class _LoginPageState extends State<LoginPage> {
         print(action.error);
       }
     } else if (action is LoginSuccessful) {
-  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
-  }
+      Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+    }
   }
 
   @override

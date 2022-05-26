@@ -42,8 +42,8 @@ class _LoginTeacherPageState extends State<LoginTeacherPage> {
         print(action.error);
       }
     } else if (action is LoginTutorSuccessful) {
-  Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
-  }
+      Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+    }
   }
 
   @override

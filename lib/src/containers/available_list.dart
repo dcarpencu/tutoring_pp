@@ -19,14 +19,14 @@ class AvailableList extends StatelessWidget {
             style: TextStyle(fontSize: 16),
           ),
         ),
-    ListView.builder(
-            shrinkWrap: true,
-            padding: const EdgeInsets.all(16),
-            itemCount: course.availables.length,
-            itemBuilder: (BuildContext context, int index) {
-              return buildRow(course.availables[index]);
-            },
-          ),
+        ListView.builder(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(16),
+          itemCount: course.availables.length,
+          itemBuilder: (BuildContext context, int index) {
+            return buildRow(course.availables[index]);
+          },
+        ),
       ],
     );
   }

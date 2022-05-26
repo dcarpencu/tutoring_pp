@@ -13,10 +13,13 @@ class CourseCard extends StatelessWidget {
       child: ListTile(
         title: Text(course.name),
         subtitle: Text(course.type),
-        trailing: IconButton(onPressed: () => Navigator.push<Widget>(
-            context, MaterialPageRoute(
-              builder: (BuildContext context) => CourseRoom(course: course),
-            ),),
+        trailing: IconButton(
+            onPressed: () => Navigator.push<Widget>(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => CourseRoom(course: course),
+                  ),
+                ),
             icon: const Icon(Icons.settings_applications_rounded)),
       ),
     );
