@@ -32,8 +32,8 @@ class _AddCourseDialogState extends State<AddCourseDialog> {
               onChanged: (String text) => courseName = text,
             ),
             RadioListTile(
-              title: const Text('Theoretical'),
-              value: 'theoretical',
+              title: const Text('Beginner'),
+              value: 'beginner',
               groupValue: character,
               onChanged: (Object? value) {
                 setState(() {
@@ -42,8 +42,8 @@ class _AddCourseDialogState extends State<AddCourseDialog> {
               },
             ),
             RadioListTile(
-              title: const Text('Hands-on'),
-              value: 'hands-on',
+              title: const Text('Intermediate'),
+              value: 'intermediate',
               groupValue: character,
               onChanged: (Object? value) {
                 setState(() {
@@ -52,8 +52,8 @@ class _AddCourseDialogState extends State<AddCourseDialog> {
               },
             ),
             RadioListTile(
-              title: const Text('Other'),
-              value: 'other',
+              title: const Text('Expert'),
+              value: 'expert',
               groupValue: character,
               onChanged: (Object? value) {
                 setState(() {
