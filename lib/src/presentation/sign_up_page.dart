@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tutoring_pp/src/actions/index1.dart';
 import 'package:tutoring_pp/src/models/index.dart';
@@ -61,6 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       TextFormField(
+                        autocorrect: false,
                         controller: _email,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
@@ -81,6 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         },
                       ),
                       TextFormField(
+                        autocorrect: false,
                         controller: _username,
                         focusNode: _usernameNode,
                         keyboardType: TextInputType.name,
@@ -120,9 +123,10 @@ class _SignUpPageState extends State<SignUpPage> {
                         },
                       ),
                       const SizedBox(height: 16),
-                      TextButton(
+                      ButttonWithIcon(
+                        title: 'Sign Up',
+                        icon: Icons.app_registration_rounded,
                         onPressed: () => _onNext(context),
-                        child: const Text('Sign Up'),
                       ),
                       TextButton(
                         onPressed: () {
